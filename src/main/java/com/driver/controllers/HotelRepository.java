@@ -53,8 +53,10 @@ public class HotelRepository {
             return -1;
         }
         int amountToBePaid=booking.getNoOfRooms()*hotelMap.get(hotelname).getPricePerNight();
+        int roomLeft=-booking.getNoOfRooms()+hotelMap.get(hotelname).getAvailableRooms();
         personToBookingMap.get(booking.getBookingAadharCard()).add(booking.getBookingId());
         bookingToPersonMap.put(booking.getBookingId(),booking.getBookingAadharCard());
+        hotelMap.get(hotelname).setAvailableRooms(roomLeft);
         return amountToBePaid;
     }
 
