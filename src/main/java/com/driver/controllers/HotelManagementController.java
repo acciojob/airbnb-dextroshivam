@@ -12,16 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/hotel")
 public class HotelManagementController {
 
-    hotelService hotelService=new hotelService();
+    HotelService hotelService=new HotelService();
 
     @PostMapping("/add-hotel")
     public String addHotel(@RequestBody Hotel hotel){

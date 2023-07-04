@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 @Repository
-public class hotelRepository {
+public class HotelRepository {
     HashMap<String, Hotel> hotelMap=new HashMap<>();
     HashMap<Integer, User> userMap=new HashMap<>();
     HashMap<Integer, List<String>> personToBookingMap=new HashMap<>();
@@ -22,7 +22,7 @@ public class hotelRepository {
         //Incase somebody is trying to add the duplicate hotelName return FAILURE
         //in all other cases return SUCCESS after successfully adding the hotel to the hotelDb.
 
-        if(hotel.getHotelName().equals("") || hotel.getHotelName()==null || hotel==null){
+        if( hotel.getHotelName()==null  ||hotel==null  ||hotel.getHotelName().equals("") ){
             return "FAILURE";
         }else if(hotelMap.containsKey(hotel.getHotelName())){
             return "FAILURE";

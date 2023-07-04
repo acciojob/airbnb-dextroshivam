@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class hotelService {
-    hotelRepository hotelRepository=new hotelRepository();
+public class HotelService {
+    HotelRepository hotelRepository=new HotelRepository();
     public String addHotel(Hotel hotel) {
             return hotelRepository.addHotel(hotel);
     }
